@@ -9,8 +9,10 @@ warnings.filterwarnings("ignore")
 class Simulation:
     def __init__(self):
         attempts = -1
+
         while attempts < 1:
             attempts = get_integer_input("Insert how many attempts are you gonna make: ")
+
         self.attempts = attempts
         self.mean_scores = []
         self.count = []
@@ -94,21 +96,16 @@ def menu():
         choice = get_integer_input("Enter your choice: ")
 
     if choice == 1:
-        simulationObject = Simulation()
-    elif choice == 2:
         simulationObject = SimulationWithSwitches()
+    elif choice == 2:
+        simulationObject = Simulation()
     elif choice == 3:
         exit()
 
     simulationObject.simulate()
 
-    menu()  
+    menu()
+
 
 if __name__ == '__main__':
-    
-    
     menu()
-    
-    
-
-  
