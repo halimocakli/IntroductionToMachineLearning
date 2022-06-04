@@ -26,11 +26,11 @@ X_data = data.drop(["diagnosis"], axis=1)
 # Formül: (X - min(X)) / (max(X) - min(X))
 X = (X_data - np.min(X_data))/(np.max(X_data)-np.min(X_data))
 
-
+# Elimizdeki veriyi Train - Test olacak şekilde ayıralım
 X_train, X_test, y_train, y_test = train_test_split(
     X, y, test_size=0.15, random_state=42)
 
-
+# Desicion Tree modelimizi oluşturalım
 desicionTree = DecisionTreeClassifier()
 desicionTree.fit(X_train, y_train)
 
